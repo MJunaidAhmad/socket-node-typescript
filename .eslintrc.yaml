@@ -1,0 +1,38 @@
+env:
+  browser: true
+  node: true
+  mocha: true
+root: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaVersion: 2022
+  sourceType: "module"
+extends:
+  - "eslint:recommended"
+  - "plugin:@typescript-eslint/recommended"
+  - "plugin:import/recommended"
+  - "plugin:import/typescript"
+  - "prettier"
+plugins:
+  - "@typescript-eslint"
+settings:
+  import/resolver:
+    node:
+      extensions: [".js", ".ts", ".d.ts", ".tsx", ".jsx"]
+
+ignorePatterns:
+  - build
+
+rules:
+  camelcase: "error"
+  func-style:
+    - "error"
+    - "declaration"
+  require-await: "warn"
+  no-await-in-loop: "error"
+  no-var: "error"
+
+  import/order: "error"
+  max-len:
+    - "warn"
+    - code: 200
